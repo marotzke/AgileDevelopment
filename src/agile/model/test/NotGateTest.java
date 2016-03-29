@@ -10,7 +10,7 @@ import agile.model.Switch;
 public class NotGateTest {
 		
 	@Test
-	public void notGateBothLow(){
+	public void notGateHigh(){
 		Switch s = new Switch();
 		NotGate not = new NotGate();
 		
@@ -22,11 +22,10 @@ public class NotGateTest {
 		
 		
 		Assert.assertFalse(not.getOutputValue(0));
-		
 	}
 	
 	@Test
-	public void notGateDiferentInput(){
+	public void notGateLow(){
 		Switch s = new Switch();
 		NotGate not = new NotGate();
 		

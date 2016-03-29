@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 
 public class Screen extends JPanel{
 	
+	//Implement the GUI using Swing
+	
 	private static final long serialVersionUID = 1L;
 	
 	private final static int CELL_SIZE = 25;

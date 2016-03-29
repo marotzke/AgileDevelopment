@@ -4,8 +4,8 @@ public class LogicGate implements Source, Drain{
 
 	@Override
 	public InputPin getInputPin(int index) {
-		// TODO Auto-generated method stub
-		return null;
+		InputPin Pin = new InputPin(index);
+		return Pin;
 	}
 
 	@Override

@@ -9,4 +9,8 @@ public class NotGate extends LogicGate{
 		
 		return !sinalA;
 	}
+
+	public void setPin(InputPin pin) {
+		this.pinA = pin;
+	}
 }

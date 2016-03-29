@@ -4,11 +4,11 @@ public class AndGate extends LogicGate {
 	private InputPin pinA;
 	private InputPin pinB;
 	
-	public AndGate(){
-		InputPin pinA = new InputPin();
-		InputPin pinB = new InputPin();
+	public void setPin(InputPin pinA, InputPin pinB){
+		this.pinA = pinA;
+		this.pinB = pinB;
 	}
-	
+		
 	public boolean getOutputValue(int index) {
 		
 		boolean sinalA = pinA.getSource().getOutputValue(pinA.getIndex());

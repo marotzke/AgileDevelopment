@@ -8,16 +8,14 @@ public class Screen extends JPanel{
 	//Implement the GUI using Swing
 	
 	private static final long serialVersionUID = 1L;
-	
-	private final static int CELL_SIZE = 25;
-	
+		
 	private int width;
 	private int height;
 	
 	public Screen(){
-		this.width  = 20;
-		this.height = 20;
+		this.width  = 2000;
+		this.height = 2000;
 		
-		setPreferredSize(new Dimension(this.width * CELL_SIZE, this.height * CELL_SIZE));
+		setPreferredSize(new Dimension(this.width, this.height));
 	}
 }

@@ -4,17 +4,17 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import agile.model.AndGate;
-import agile.model.HalfAdder;
+import agile.model.HalfAdderGate;
 import agile.model.InputPin;
 import agile.model.Switch;
 
-public class HalfAdderGate {
+public class HalfAdderGateTest {
 	
 	@Test
 	public void halfAdderGateBothLow(){
 		Switch s = new Switch();
 		Switch s1 = new Switch();
-		HalfAdder half = new HalfAdder();
+		HalfAdderGate half = new HalfAdderGate();
 		
 		InputPin pinA = half.getInputPin(0);
 		InputPin pinB = half.getInputPin(1);
@@ -36,7 +36,7 @@ public class HalfAdderGate {
 	public void halfAdderGateBothHigh(){
 		Switch s = new Switch();
 		Switch s1 = new Switch();
-		HalfAdder half = new HalfAdder();
+		HalfAdderGate half = new HalfAdderGate();
 		
 		InputPin pinA = half.getInputPin(0);
 		InputPin pinB = half.getInputPin(1);
@@ -58,7 +58,7 @@ public class HalfAdderGate {
 	public void halfAdderGate01(){
 		Switch s = new Switch();
 		Switch s1 = new Switch();
-		HalfAdder half = new HalfAdder();
+		HalfAdderGate half = new HalfAdderGate();
 		
 		InputPin pinA = half.getInputPin(0);
 		InputPin pinB = half.getInputPin(1);
@@ -80,7 +80,7 @@ public class HalfAdderGate {
 	public void halfAdderGate10(){
 		Switch s = new Switch();
 		Switch s1 = new Switch();
-		HalfAdder half = new HalfAdder();
+		HalfAdderGate half = new HalfAdderGate();
 		
 		InputPin pinA = half.getInputPin(0);
 		InputPin pinB = half.getInputPin(1);

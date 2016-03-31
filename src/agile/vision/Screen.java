@@ -1,11 +1,11 @@
 package agile.vision;
 
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
+import javax.swing.*;
 
-import javax.swing.JPanel;
-
-public class Screen extends JPanel{
+public class Screen extends JPanel {
 	
 	//Implement the GUI using Swing
 	
@@ -26,7 +26,7 @@ public class Screen extends JPanel{
 	}
 	
 	public void drawAndGate(Graphics g) {
-		int size  = 15;
+		int size  = 5;
 		
 		g.drawLine(size*5, size*5, size*10, size*5);
 		g.drawLine(size*5, size*10, size*10, size*10);
@@ -35,5 +35,27 @@ public class Screen extends JPanel{
 		g.drawLine(size*16,size*7,size*22,size*7);
 		
 		getToolkit().sync();
+		
+	}
+	
+	public void setupScreen(Screen screen){
+        JFrame frame = new JFrame("LogicGate Program");
+        
+		JButton button = new JButton();
+		button.setText("Press me");
+		button.setLocation(25, 200);
+		
+		screen.setLayout(new FlowLayout());
+		
+		JLabel label = new JLabel("This is a label!");
+		
+		screen.add(label);
+		screen.add(button);
+		
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+        frame.setContentPane(screen);
+        frame.pack();
+        frame.setVisible(true);
 	}
 }

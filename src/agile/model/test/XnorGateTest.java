@@ -48,6 +48,7 @@ public class XnorGateTest {
 	
 	@Test
 	public void xnorGate10(){
+		
 		Switch s = new Switch();
 		Switch s1 = new Switch();
 		XnorGate xnor = new XnorGate();

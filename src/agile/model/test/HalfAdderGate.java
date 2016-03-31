@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import agile.model.AndGate;
+import agile.model.HalfAdder;
 import agile.model.InputPin;
 import agile.model.Switch;
 

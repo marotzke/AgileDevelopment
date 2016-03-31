@@ -49,6 +49,8 @@ public class NegAndGateTest {
 	@Test
 	public void negAndGateDiferentInput(){
 		Switch s = new Switch();
+		Switch s2 = new Switch();
+		
 		NegAndGate negand = new NegAndGate();
 		
 		InputPin pinA = negand.getInputPin(0);
@@ -56,8 +58,8 @@ public class NegAndGateTest {
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
-		s.setSignalLow();
-		pinB.setSource(s);
+		s2.setSignalLow();
+		pinB.setSource(s2);
 		
 		negand.setPin(pinA, pinB);
 		

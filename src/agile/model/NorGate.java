@@ -18,6 +18,7 @@ public class NorGate extends LogicGate {
 		or.setPin(pinA, pinB);
 
 		InputPin pin = new InputPin(0);
+		
 		pin.setSource(or);
 		
 		not.setPin(pin);

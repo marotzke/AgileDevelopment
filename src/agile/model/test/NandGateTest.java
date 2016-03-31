@@ -50,15 +50,16 @@ public class NandGateTest {
 	@Test
 	public void NandGateDiferentInput(){
 		Switch s = new Switch();
+		Switch s1 = new Switch();
 		NandGate nand = new NandGate();
 		
 		InputPin pinA = nand.getInputPin(0);
 		InputPin pinB = nand.getInputPin(1);
 		
-		s.setSignalHigh();
-		pinA.setSource(s);
 		s.setSignalLow();
-		pinB.setSource(s);
+		pinA.setSource(s);
+		s1.setSignalHigh();
+		pinB.setSource(s1);
 		
 		nand.setPin(pinA, pinB);
 		

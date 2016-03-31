@@ -11,12 +11,12 @@ public class XorGate extends LogicGate {
 	}
 	
 	public boolean getOutputValue(int index){
+		
 		NotGate not1 = new NotGate();
 		NotGate not2 = new NotGate();
 		AndGate and1 = new AndGate();
 		AndGate and2 = new AndGate();
 		OrGate or = new OrGate();
-		
 		
 		not1.setPin (pinA);
 		not2.setPin(pinB);

@@ -23,7 +23,7 @@ public class XnorGateTest {
 		xnor.setPin(pinA, pinB);
 		
 		
-		Assert.assertFalse(xnor.getOutputValue(0));
+		Assert.assertTrue(xnor.getOutputValue(0));
 		
 	}
 	
@@ -42,7 +42,7 @@ public class XnorGateTest {
 		xnor.setPin(pinA, pinB);
 		
 		
-		Assert.assertFalse(xnor.getOutputValue(0));
+		Assert.assertTrue(xnor.getOutputValue(0));
 		
 	}
 	
@@ -64,7 +64,7 @@ public class XnorGateTest {
 		xnor.setPin(pinA, pinB);
 		
 		
-		Assert.assertTrue(xnor.getOutputValue(0));
+		Assert.assertFalse(xnor.getOutputValue(0));
 		
 	}
 	
@@ -85,7 +85,7 @@ public class XnorGateTest {
 		xnor.setPin(pinA, pinB);
 		
 		
-		Assert.assertTrue(xnor.getOutputValue(0));
+		Assert.assertFalse(xnor.getOutputValue(0));
 		
 	}
 }

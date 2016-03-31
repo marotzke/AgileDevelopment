@@ -30,15 +30,16 @@ public class OrGateTest {
 	@Test
 	public void orGateDiferentInput(){
 		Switch s = new Switch();
+		Switch s1 = new Switch();
 		OrGate or = new OrGate();
 		
 		InputPin pinA = or.getInputPin(0);
 		InputPin pinB = or.getInputPin(1);
 		
-		s.setSignalLow();
-		pinA.setSource(s);
 		s.setSignalHigh();
-		pinB.setSource(s);
+		pinA.setSource(s);
+		s1.setSignalLow();
+		pinB.setSource(s1);
 		
 		or.setPin(pinA, pinB);
 				

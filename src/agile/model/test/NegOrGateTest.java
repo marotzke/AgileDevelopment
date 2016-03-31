@@ -49,6 +49,7 @@ public class NegOrGateTest {
 	@Test
 	public void NegOrGateDiferentInput(){
 		Switch s = new Switch();
+		Switch s1 = new Switch();
 		NegOrGate negor = new NegOrGate();
 		
 		InputPin pinA = negor.getInputPin(0);
@@ -56,8 +57,8 @@ public class NegOrGateTest {
 		
 		s.setSignalLow();
 		pinA.setSource(s);
-		s.setSignalHigh();
-		pinB.setSource(s);
+		s1.setSignalHigh();
+		pinB.setSource(s1);
 		
 		negor.setPin(pinA, pinB);
 		

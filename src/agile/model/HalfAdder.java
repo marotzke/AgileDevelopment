@@ -13,13 +13,13 @@ public class HalfAdder extends LogicGate{
 	public boolean getOutputValue(int index){
 		
 		AndGate and = new AndGate();
-		XnorGate xnor = new XnorGate();
+		XorGate xor = new XorGate();
 		
 		and.setPin(pinA, pinB);
-		xnor.setPin(pinA,pinB);
+		xor.setPin(pinA,pinB);
 		
 		if (index == 0) {
-			return xnor.getOutputValue(0);
+			return xor.getOutputValue(0);
 		}
 		
 		else {

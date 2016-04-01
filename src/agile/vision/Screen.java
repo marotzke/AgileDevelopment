@@ -3,59 +3,75 @@ package agile.vision;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import agile.model.*;
 import javax.swing.*;
 
-public class Screen extends JPanel {
+
+public class Screen extends JPanel{
 	
 	//Implement the GUI using Swing
 	
 	private static final long serialVersionUID = 1L;
-		
+				
 	private int width;
 	private int height;
+	
+	private static GateDrawer[] gates;
+	public static Graphics g;
+	
+	/*private String[] logicGateStrings = {"AND","NAND","NEG-AND",
+			"OR","NOR","XOR","XNOR","NEG-OR",
+			"NOT","HALF-ADDER","FULLADDER"};*/
+	static private String gate = "None";
 	
 	public Screen(){
 		this.width  = 500;
 		this.height = 500;
 		
 		setPreferredSize(new Dimension(this.width, this.height));
+		
+		AndGateDrawer AND = new AndGateDrawer();
+		
 	}
 	
 	public void paintComponent(Graphics g) {
-		drawAndGate(g);
-	}
-	
-	public void drawAndGate(Graphics g) {
-		int size  = 5;
-		
-		g.drawLine(size*5, size*5, size*10, size*5);
-		g.drawLine(size*5, size*10, size*10, size*10);
-		g.drawLine(size*10, size*2, size*10, size*12);
-		g.drawArc(size*6, size*2, size*10, size*10, -100, 200);
-		g.drawLine(size*16,size*7,size*22,size*7);
-		
+
 		getToolkit().sync();
-		
 	}
 	
 	public void setupScreen(Screen screen){
         JFrame frame = new JFrame("LogicGate Program");
         
-		JButton button = new JButton();
-		button.setText("Press me");
-		button.setLocation(25, 200);
-		
+        JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>(gates);        
+        logicGates.setSelectedIndex(0);
 		screen.setLayout(new FlowLayout());
+		screen.add(logicGates);
 		
-		JLabel label = new JLabel("This is a label!");
-		
-		screen.add(label);
-		screen.add(button);
+		logicGates.addActionListener(new ActionListener() {
+			 
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+				JComboBox<String> combo = (JComboBox<String>) event.getSource();
+		        gate = (String) combo.getSelectedItem();
+		 
+		        if (gate.equals("OR")) {
+		            System.out.println("Or!");
+		    		repaint();
+		            
+		        } else if (gate.equals("AND")) {
+		            System.out.println("And!");
+		    		repaint();
+		        }
+		    }
+		});        
 		
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        frame.setResizable(true);
         frame.setContentPane(screen);
         frame.pack();
         frame.setVisible(true);
-	}
+        }
+
 }

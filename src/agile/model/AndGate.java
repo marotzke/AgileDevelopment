@@ -16,4 +16,5 @@ public class AndGate extends LogicGate {
 		
 		return sinalA && sinalB;
 	}
+	
 }

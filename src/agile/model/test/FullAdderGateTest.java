@@ -18,7 +18,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		
 		s.setSignalLow();
@@ -45,7 +45,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalLow();
 		pinA.setSource(s);
@@ -71,7 +71,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		
 		s.setSignalLow();
@@ -98,7 +98,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
@@ -124,7 +124,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalLow();
 		pinA.setSource(s);
@@ -150,7 +150,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
@@ -176,7 +176,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
@@ -202,7 +202,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(1);
+		InputPin pinC = full.getInputPin(2);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);

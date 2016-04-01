@@ -21,33 +21,29 @@ public class FullAdderGate extends LogicGate {
 		ha1.setPin(pinA,pinB);
 		
 		InputPin pin1 = new InputPin(0);
+		InputPin pin2 = new InputPin(1);
 		InputPin pin3 = new InputPin(1);
 		
 		pin1.setSource(ha1);
-		pin3.setSource(ha1);
+		pin2.setSource(ha1);
 		
-		ha2.setPin(pin1,pinC);
+		ha2.setPin(pinC,pin1);
 		
-		InputPin pin2 = new InputPin(1);
-		
-		pin2.setSource(ha2);
+		pin3.setSource(ha2);
 		
 		or.setPin(pin2,pin3);
 		
 		if (index == 1){
 			
-			return or.getOutputValue(1);
+			return or.getOutputValue(0);
 			
 		}
 		
 		else{
 			
-			return or.getOutputValue(0);
+			return ha2.getOutputValue(0);
 			
 		}
-		
-		
-		
 		
 	}
 	

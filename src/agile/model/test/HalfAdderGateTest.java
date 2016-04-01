@@ -3,7 +3,6 @@ package agile.model.test;
 import org.junit.Assert;
 import org.junit.Test;
 
-import agile.model.AndGate;
 import agile.model.HalfAdderGate;
 import agile.model.InputPin;
 import agile.model.Switch;

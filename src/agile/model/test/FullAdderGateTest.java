@@ -18,7 +18,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		
 		s.setSignalLow();
@@ -26,13 +26,13 @@ public class FullAdderGateTest {
 		s1.setSignalLow();
 		pinB.setSource(s1);
 		s2.setSignalLow();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertFalse(full.getOutputValue(0));
 		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(0));
 		
 	}
 	
@@ -45,20 +45,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalLow();
 		pinA.setSource(s);
 		s1.setSignalLow();
 		pinB.setSource(s1);
 		s2.setSignalHigh();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertFalse(full.getOutputValue(0));
-		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(0));
 		
 	}
 	
@@ -71,7 +71,7 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		
 		s.setSignalLow();
@@ -79,13 +79,13 @@ public class FullAdderGateTest {
 		s1.setSignalHigh();
 		pinB.setSource(s1);
 		s2.setSignalLow();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertFalse(full.getOutputValue(0));
 		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(0));
 		
 	}
 	
@@ -98,20 +98,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
 		s1.setSignalLow();
 		pinB.setSource(s1);
 		s2.setSignalLow();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertFalse(full.getOutputValue(0));
-		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(0));
 		
 	}
 	
@@ -124,20 +124,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalLow();
 		pinA.setSource(s);
 		s1.setSignalHigh();
 		pinB.setSource(s1);
 		s2.setSignalHigh();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertTrue(full.getOutputValue(0));
-		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(0));
 		
 	}
 	
@@ -150,20 +150,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
 		s1.setSignalHigh();
 		pinB.setSource(s1);
 		s2.setSignalLow();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertTrue(full.getOutputValue(0));
-		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(0));
 		
 	}
 	
@@ -176,20 +176,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
 		s1.setSignalLow();
 		pinB.setSource(s1);
 		s2.setSignalHigh();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertTrue(full.getOutputValue(0));
-		Assert.assertFalse(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertFalse(full.getOutputValue(0));
 		
 	}
 	
@@ -202,20 +202,20 @@ public class FullAdderGateTest {
 		
 		InputPin pinA = full.getInputPin(0);
 		InputPin pinB = full.getInputPin(1);
-		InputPin pinC = full.getInputPin(2);
+		InputPin pinC = full.getInputPin(1);
 		
 		s.setSignalHigh();
 		pinA.setSource(s);
 		s1.setSignalHigh();
 		pinB.setSource(s1);
 		s2.setSignalHigh();
-		pinB.setSource(s2);
+		pinC.setSource(s2);
 		
 		full.setPin(pinA, pinB, pinC);
 		
 		
-		Assert.assertTrue(full.getOutputValue(0));
 		Assert.assertTrue(full.getOutputValue(1));
+		Assert.assertTrue(full.getOutputValue(0));
 		
 	}
 	

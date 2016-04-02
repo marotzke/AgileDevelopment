@@ -8,7 +8,6 @@ public class AndGateDrawer extends GateDrawer{
 		gateName = "AND";
 	}
 	public void drawGate(Graphics g) {
-		int size  = 10;
 		
 		g.drawLine(size*5, size*5, size*10, size*5);
 		g.drawLine(size*5, size*10, size*10, size*10);

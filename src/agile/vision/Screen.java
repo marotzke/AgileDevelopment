@@ -5,7 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import agile.model.*;
+
 import javax.swing.*;
 
 
@@ -18,7 +18,19 @@ public class Screen extends JPanel{
 	private int width;
 	private int height;
 	
-	private static GateDrawer[] gates;
+	private static AndGateDrawer AND;
+	private static OrGateDrawer OR;
+	private static NotGateDrawer NOT;
+	private static HalfAdderGateDrawer HA;
+	private static FullAdderGateDrawer FA;
+	private static XorGateDrawer XOR;
+	private static XnorGateDrawer XNOR;
+	private static NegAndGateDrawer NEGAND;
+	private static NegOrGateDrawer NEGOR;
+	private static NorGateDrawer NOR;
+	private static NandGateDrawer NAND;
+	
+	private static GateDrawer[] gates = {AND,OR};
 	public static Graphics g;
 	
 	/*private String[] logicGateStrings = {"AND","NAND","NEG-AND",
@@ -32,12 +44,14 @@ public class Screen extends JPanel{
 		
 		setPreferredSize(new Dimension(this.width, this.height));
 		
-		AndGateDrawer AND = new AndGateDrawer();
+		AND = new AndGateDrawer();
+		OR = new OrGateDrawer();
+		//gates = {(AndGateDrawer) AND, (OrGateDrawer) OR};
 		
 	}
 	
 	public void paintComponent(Graphics g) {
-
+		
 		getToolkit().sync();
 	}
 	
@@ -55,16 +69,7 @@ public class Screen extends JPanel{
 		    public void actionPerformed(ActionEvent event) {
 				JComboBox<String> combo = (JComboBox<String>) event.getSource();
 		        gate = (String) combo.getSelectedItem();
-		 
-		        if (gate.equals("OR")) {
-		            System.out.println("Or!");
-		    		repaint();
-		            
-		        } else if (gate.equals("AND")) {
-		            System.out.println("And!");
-		    		repaint();
 		        }
-		    }
 		});        
 		
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

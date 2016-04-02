@@ -5,11 +5,16 @@ import java.awt.Graphics;
 public class GateDrawer implements Gate{
 	
 	protected String gateName;
-	protected int size = 5;
+	
+	protected int size;
+	
+	public void setSize(int size) {
+		this.size = size;	
+	}
 	
 	@Override
 	public String toString(){
-		return this.gateName;
+		return gateName;
 	}
 	
 	public void drawGate(Graphics g){

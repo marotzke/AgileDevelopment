@@ -18,7 +18,6 @@ public class Screen extends JPanel{
 	private int width;
 	private int height;
 	
-	private GateDrawer toSetSize = new GateDrawer();
 	private static AndGateDrawer AND;
 	private static OrGateDrawer OR;
 	private static NotGateDrawer NOT;
@@ -64,7 +63,11 @@ public class Screen extends JPanel{
 	public void setupScreen(Screen screen){
         JFrame frame = new JFrame("LogicGate Program");
         
+        JCheckBox switchA = new JCheckBox();
+        JCheckBox switchB = new JCheckBox();
+        
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
+        
         logicGates.addItem(NOT);
         logicGates.addItem(AND);
         logicGates.addItem(NAND);
@@ -80,9 +83,21 @@ public class Screen extends JPanel{
         logicGates.setSelectedIndex(0);
 		screen.setLayout(new FlowLayout());
 		screen.add(logicGates);
+		screen.add(switchA);
+		screen.add(switchB);
+		
+		switchA.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				boolean a = switchA.isSelected();
+				boolean b = switchB.isSelected();
+				System.out.println(a);
+				System.out.println(b);
+			}
+			
+		});
 		
 		logicGates.addActionListener(new ActionListener() {
-			 
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
 				JComboBox<GateDrawer> combo = (JComboBox<GateDrawer>) event.getSource();

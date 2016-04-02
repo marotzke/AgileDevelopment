@@ -7,12 +7,12 @@ public class NotGateDrawer extends GateDrawer{
 		gateName = "NOT";
 	}
 	public void drawGate(Graphics g){
-		
-		g.drawLine(size*10, size*5, size*16, size*8);
-		g.drawLine(size*10, size*11, size*16, size*8);
-		g.drawLine(size*10, size*5, size*10, size*11);
-		g.drawLine(size*5, size*8, size*10, size*8);
-		g.drawLine(size*18, size*8, size*23, size*8);
-		g.drawArc(size*16, size*7, size*2, size*2, -20, 360);
+			
+		g.drawLine(locationX+size*10, locationY+size*4, locationX+size*16, locationY+size*7);
+		g.drawLine(locationX+size*10, locationY+size*10, locationX+size*16, locationY+size*7);
+		g.drawLine(locationX+size*10, locationY+size*4, locationX+size*10, locationY+size*10);
+		g.drawLine(locationX+size*5, locationY+size*7, locationX+size*10, locationY+size*7);
+		g.drawLine(locationX+size*18, locationY+size*7, locationX+size*23, locationY+size*7);
+		g.drawArc(locationX+size*16, locationY+size*6, size*2, size*2, -20, 360);
 	}
 }

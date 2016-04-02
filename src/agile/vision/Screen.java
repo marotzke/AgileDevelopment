@@ -90,6 +90,8 @@ public class Screen extends JPanel{
 		        System.out.println(gate);
 				getGraphics().clearRect(0, 0, frame.getWidth(), frame.getHeight());
 		        gate.setSize(10);
+		        gate.setLocationX(5);
+		        gate.setLocationY(5);
 		        gate.drawGate(getGraphics());
 		        getToolkit().sync();
 		        }

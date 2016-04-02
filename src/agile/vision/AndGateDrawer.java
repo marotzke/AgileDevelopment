@@ -8,11 +8,11 @@ public class AndGateDrawer extends GateDrawer{
 	}
 	public void drawGate(Graphics g) {
 
-		g.drawLine(size*5, size*5, size*10, size*5);
-		g.drawLine(size*5, size*10, size*10, size*10);
-		g.drawLine(size*10, size*2, size*10, size*12);
-		g.drawArc(size*6, size*2, size*10, size*10, -100, 200);
-		g.drawLine(size*16,size*7,size*22,size*7);
+		g.drawLine(locationX+size*5, locationY+size*5, locationX+size*10, locationY+size*5);
+		g.drawLine(locationX+size*5, locationY+size*10, locationX+size*10, locationY+size*10);
+		g.drawLine(locationX+size*10, locationY+size*2, locationX+size*10, locationY+size*12);
+		g.drawArc(locationX+size*6, locationY+size*2, size*10, size*10, -100, 200);
+		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 
 	}
 }

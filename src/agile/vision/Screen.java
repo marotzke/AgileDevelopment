@@ -26,6 +26,12 @@ public class Screen extends JPanel{
 	private Switch sb;
 	private Switch sc;
 	
+	JCheckBox switchA;
+    JCheckBox switchB;
+    JCheckBox switchC;
+    JCheckBox lampA;
+    JCheckBox lampB;
+	
 	private static AndGateDrawer AND;
 	private static OrGateDrawer OR;
 	private static NotGateDrawer NOT;
@@ -75,11 +81,11 @@ public class Screen extends JPanel{
 	public void setupScreen(Screen screen){
         JFrame frame = new JFrame("LogicGate Program");
         
-        JCheckBox switchA = new JCheckBox("A");
-        JCheckBox switchB = new JCheckBox("B");
-        JCheckBox switchC = new JCheckBox("C");
-        JCheckBox lampA = new JCheckBox("O");
-        JCheckBox lampB = new JCheckBox("Carry");
+        switchA = new JCheckBox("A");
+        switchB = new JCheckBox("B");
+        switchC = new JCheckBox("C");
+        lampA = new JCheckBox("O");
+        lampB = new JCheckBox("Carry");
         
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
         
@@ -166,6 +172,8 @@ public class Screen extends JPanel{
 				getGraphics().clearRect(0, 0, frame.getWidth(), frame.getHeight());
 				gate.drawGate(getGraphics());
 				getToolkit().sync();
+				lampA.setSelected(false);
+				lampB.setSelected(false);
 		        }
 		});        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

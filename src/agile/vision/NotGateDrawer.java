@@ -20,7 +20,7 @@ public class NotGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*10, locationY+size*10, locationX+size*16, locationY+size*7);
 		g.drawLine(locationX+size*10, locationY+size*4, locationX+size*10, locationY+size*10);
 		g.drawLine(locationX+size*5, locationY+size*7, locationX+size*10, locationY+size*7);
-		g.drawLine(locationX+size*18, locationY+size*7, locationX+size*23, locationY+size*7);
+		g.drawLine(locationX+size*18, locationY+size*7, locationX+size*20, locationY+size*7);
 		g.drawArc(locationX+size*16, locationY+size*6, size*2, size*2, -20, 360);
 		
 		switch1.setBounds(locationX+size*4,locationY+size*6, switchSize.width, switchSize.height);

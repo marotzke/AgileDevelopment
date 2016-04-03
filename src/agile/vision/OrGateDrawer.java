@@ -22,9 +22,9 @@ public class OrGateDrawer extends GateDrawer{
 		g.drawArc(locationX+size*3, locationY+size*2, size*13, size*11, -100, 200);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 		
-		switch1.setBounds(locationX+size*4,locationY+size*4, switchSize.width, switchSize.height);
-		switch2.setBounds(locationX+size*4,locationY+size*9, switchSize.width, switchSize.height);
-		lampA.setBounds(locationX+size*20,locationY+size*6, switchSize.width, switchSize.height);
+		switch1.setBounds(locationX+size*4,locationY+size*4, switchSizeW, switchSizeW);
+		switch2.setBounds(locationX+size*4,locationY+size*9, switchSizeW, switchSizeW);
+		lampA.setBounds(locationX+size*20,locationY+size*6, switchSizeW, switchSizeW);
 		switch1.setVisible(true);
 		switch2.setVisible(true);
 		switch3.setVisible(false);

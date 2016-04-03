@@ -166,6 +166,7 @@ public class Screen extends JPanel{
 		logicGates.addActionListener(new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
+		    	Graphics g = getGraphics();
 				JComboBox<GateDrawer> tmp = (JComboBox<GateDrawer>) event.getSource();
 		        gate = (GateDrawer) tmp.getSelectedItem();
 		        System.out.println(gate);
@@ -173,8 +174,8 @@ public class Screen extends JPanel{
 		        gate.setLocationX(locationX);
 		        gate.setLocationY(locationY);
 		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
-				getGraphics().clearRect(0, 0, frame.getWidth(), frame.getHeight());
-				gate.drawGate(getGraphics());
+				g.clearRect(locationX+40, locationY, screen.getWidth(), screen.getHeight());
+				gate.drawGate(g);
 				getToolkit().sync();
 		        }
 		});        

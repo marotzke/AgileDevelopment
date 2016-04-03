@@ -11,7 +11,8 @@ public class GateDrawer implements Gate{
 	
 	protected String gateName;
 		
-	protected Dimension switchSize;
+	protected int switchSizeH;
+	protected int switchSizeW;
 	
 	protected int size;
 	protected int locationX;
@@ -29,7 +30,8 @@ public class GateDrawer implements Gate{
 		this.switch3 = switch3;
 		this.lampA = lampA;
 		this.lampB = lampB;
-		this.switchSize = switch1.getPreferredSize();
+		this.switchSizeW = 40;
+		this.switchSizeH = 20;
 	}
 	
 	public void setSize(int size) {

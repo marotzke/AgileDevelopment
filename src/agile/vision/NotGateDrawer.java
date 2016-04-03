@@ -31,10 +31,11 @@ public class NotGateDrawer extends GateDrawer{
 		switch2.setVisible(false);
 		switch3.setVisible(false);
 		lampA.setVisible(true);
+		lampB.setVisible(false);
 	}
 	
 	@Override
-	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
 		InputPin pin = not.getInputPin(0);
 		pin.setSource(sa);
 		not.setPin(pin);

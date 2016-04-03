@@ -29,10 +29,11 @@ public class OrGateDrawer extends GateDrawer{
 		switch2.setVisible(true);
 		switch3.setVisible(false);
 		lampA.setVisible(true);
+		lampB.setVisible(false);
 	}
 	
 	@Override
-	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
 		InputPin pinA = or.getInputPin(0);
 		InputPin pinB = or.getInputPin(1);
 		

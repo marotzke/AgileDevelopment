@@ -54,7 +54,7 @@ public class GateDrawer implements Gate{
 		
 	}
 	
-	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
 		return false;
 	}
 

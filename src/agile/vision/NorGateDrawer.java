@@ -30,10 +30,11 @@ public class NorGateDrawer  extends GateDrawer{
 		switch2.setVisible(true);
 		switch3.setVisible(false);
 		lampA.setVisible(true);
+		lampB.setVisible(false);
 	}
 	
 	@Override
-	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
 		InputPin pinA = nor.getInputPin(0);
 		InputPin pinB = nor.getInputPin(1);
 		

@@ -2,8 +2,15 @@ package agile.vision;
 
 import java.awt.Graphics;
 
+import agile.model.HalfAdderGate;
+import agile.model.InputPin;
+import agile.model.Source;
+
 public class HalfAdderGateDrawer extends GateDrawer{
+	private HalfAdderGate ha;
+	
 	public HalfAdderGateDrawer(){
+		ha = new HalfAdderGate();
 		gateName = "HALF-ADDER";
 	}
 	public void drawGate(Graphics g){
@@ -25,5 +32,18 @@ public class HalfAdderGateDrawer extends GateDrawer{
 		switch2.setVisible(true);
 		switch3.setVisible(false);
 		lampA.setVisible(true);
+		lampB.setVisible(true);
+	}
+	
+	@Override
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
+		InputPin pinA = ha.getInputPin(0);
+		InputPin pinB = ha.getInputPin(1);
+		
+		pinA.setSource(sa);
+		pinB.setSource(sb);
+		
+		ha.setPin(pinA, pinB);
+		return ha.getOutputValue(index);
 	}
 }

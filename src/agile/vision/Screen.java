@@ -37,10 +37,7 @@ public class Screen extends JPanel{
 	private static NegOrGateDrawer NEGOR;
 	private static NorGateDrawer NOR;
 	private static NandGateDrawer NAND;
-		
-	/*private String[] logicGateStrings = {"AND","NAND","NEG-AND",
-			"OR","NOR","XOR","XNOR","NEG-OR",
-			"NOT","HALF-ADDER","FULLADDER"};*/
+
 	static protected GateDrawer gate;
 	
 	public Screen(){
@@ -67,7 +64,6 @@ public class Screen extends JPanel{
 		NEGOR = new NegOrGateDrawer();
 		HA = new HalfAdderGateDrawer();
 		FA = new FullAdderGateDrawer();
-		//gates = {(AndGateDrawer) AND, (OrGateDrawer) OR};
 		
 	}
 	
@@ -84,7 +80,6 @@ public class Screen extends JPanel{
         JCheckBox switchC = new JCheckBox("C");
         JCheckBox lampA = new JCheckBox("O");
         JCheckBox lampB = new JCheckBox("Carry");
-        //lampA.setEnabled(false);
         
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
         
@@ -115,10 +110,7 @@ public class Screen extends JPanel{
 		Dimension pSize = logicGates.getPreferredSize();
 		logicGates.setBounds(350 + insets.left, 5 + insets.top,
 	             pSize.width, pSize.height);
-		//logicGates.setLocation(0, 0);
-		//contentPane2.add(switchA);
-		//contentPane2.add(switchB);
-		
+
 		switchA.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -128,8 +120,8 @@ public class Screen extends JPanel{
 				sa.setSignal(a);
 				sb.setSignal(b);
 				sc.setSignal(c);
-				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
-				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
 			}
 		});
 		
@@ -142,8 +134,8 @@ public class Screen extends JPanel{
 				sa.setSignal(a);
 				sb.setSignal(b);
 				sc.setSignal(c);
-				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
-				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
 			}
 		});
 		
@@ -156,8 +148,8 @@ public class Screen extends JPanel{
 				sa.setSignal(a);
 				sb.setSignal(b);
 				sc.setSignal(c);
-				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
-				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
 			}
 		});
 		

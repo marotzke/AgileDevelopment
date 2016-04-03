@@ -33,7 +33,7 @@ public class NandGateDrawer extends GateDrawer{
 	}
 	
 	@Override
-	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
 		InputPin pinA = nand.getInputPin(0);
 		InputPin pinB = nand.getInputPin(1);
 		

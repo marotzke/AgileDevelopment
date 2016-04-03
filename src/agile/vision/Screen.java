@@ -109,8 +109,7 @@ public class Screen extends JPanel{
 		switchB.setBounds(locationX,locationY+size*9, 40, 20);
 		switchC.setBounds(locationX,locationY+size*13, 40, 20);
 		lampA.setBounds(locationX+size*22,locationY+size*6, 40, 20);
-		lampB.setBounds(locationX+size*22,locationY+size*9, 40, 20);
-
+		lampB.setBounds(locationX+size*22,locationY+size*9, 70, 20);
 		
 		screen.add(switchA);
 		screen.add(switchB);

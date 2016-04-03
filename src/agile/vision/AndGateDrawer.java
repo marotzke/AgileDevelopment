@@ -34,6 +34,11 @@ public class AndGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		and.setPin(pinA, pinB);
-		return and.getOutputValue(0);
+		if(index == 0){
+			return and.getOutputValue(0);
+		}
+		else{
+			return false;
+		}
 	}
 }

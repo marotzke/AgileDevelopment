@@ -22,14 +22,7 @@ public class NegAndGateDrawer  extends GateDrawer{
 		g.drawLine(locationX+size*10, locationY+size*2, locationX+size*10, locationY+size*12);
 		g.drawArc(locationX+size*6, locationY+size*2, size*10, size*10, -100, 200);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
-		
-		switch1.setBounds(locationX+size*4,locationY+size*4, switchSizeW, switchSizeH);
-		switch2.setBounds(locationX+size*4,locationY+size*9, switchSizeW, switchSizeH);
-		lampA.setBounds(locationX+size*20,locationY+size*6, switchSizeW, switchSizeH);
-		switch1.setVisible(true);
-		switch2.setVisible(true);
-		switch3.setVisible(false);
-		lampA.setVisible(true);
+
 	}
 	
 	@Override

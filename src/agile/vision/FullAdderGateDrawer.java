@@ -24,17 +24,8 @@ public class FullAdderGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*10, locationY+size*12, locationX+size*16, locationY+size*12);
 		g.drawLine(locationX+size*16,locationY+size*5,locationX+size*22,locationY+size*5);
 		g.drawLine(locationX+size*16,locationY+size*10,locationX+size*22,locationY+size*10);
-		
-		switch1.setBounds(locationX+size*4,locationY+size*4, switchSizeW, switchSizeH);
-		switch2.setBounds(locationX+size*4,locationY+size*6, switchSizeW, switchSizeH);
-		switch3.setBounds(locationX+size*4,locationY+size*9, switchSizeW, switchSizeH);
-		lampA.setBounds(locationX+size*20,locationY+size*4, switchSizeW, switchSizeH);
-		lampB.setBounds(locationX+size*20,locationY+size*9, switchSizeW, switchSizeH);
-		switch1.setVisible(true);
-		switch2.setVisible(true);
-		switch3.setVisible(true);
-		lampA.setVisible(true);
-		lampB.setVisible(true);
+
+
 	}
 	
 	@Override

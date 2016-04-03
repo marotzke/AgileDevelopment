@@ -24,15 +24,7 @@ public class HalfAdderGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*16,locationY+size*5,locationX+size*22,locationY+size*5);
 		g.drawLine(locationX+size*16,locationY+size*10,locationX+size*22,locationY+size*10);
 		
-		switch1.setBounds(locationX+size*4,locationY+size*4, switchSizeW, switchSizeH);
-		switch2.setBounds(locationX+size*4,locationY+size*9, switchSizeW, switchSizeH);
-		lampA.setBounds(locationX+size*22,locationY+size*3, switchSizeW, switchSizeH);
-		lampB.setBounds(locationX+size*22,locationY+size*11, switchSizeW, switchSizeH);
-		switch1.setVisible(true);
-		switch2.setVisible(true);
-		switch3.setVisible(false);
-		lampA.setVisible(true);
-		lampB.setVisible(true);
+
 	}
 	
 	@Override

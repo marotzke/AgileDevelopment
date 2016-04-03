@@ -105,6 +105,13 @@ public class Screen extends JPanel{
         logicGates.addItem(HA);
         logicGates.addItem(FA);
         
+		switchA.setBounds(locationX,locationY+size*4, 40, 20);
+		switchB.setBounds(locationX,locationY+size*9, 40, 20);
+		switchC.setBounds(locationX,locationY+size*13, 40, 20);
+		lampA.setBounds(locationX+size*22,locationY+size*6, 40, 20);
+		lampB.setBounds(locationX+size*22,locationY+size*9, 40, 20);
+
+		
 		screen.add(switchA);
 		screen.add(switchB);
 		screen.add(switchC);
@@ -174,7 +181,7 @@ public class Screen extends JPanel{
 		        gate.setLocationX(locationX);
 		        gate.setLocationY(locationY);
 		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
-				g.clearRect(locationX+40, locationY, screen.getWidth(), screen.getHeight());
+				g.clearRect(locationX+40, locationY, locationX+size*20, screen.getHeight());
 				gate.drawGate(g);
 				getToolkit().sync();
 		        }

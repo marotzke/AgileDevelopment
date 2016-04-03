@@ -25,8 +25,6 @@ public class NotGateDrawer extends GateDrawer{
 		
 		switch1.setBounds(locationX+size*4,locationY+size*6, switchSize.width, switchSize.height);
 		lampA.setBounds(locationX+size*20,locationY+size*6, switchSize.width, switchSize.height);
-		switch1.repaint();
-		lampA.repaint();
 		switch1.setVisible(true);
 		switch2.setVisible(false);
 		switch3.setVisible(false);

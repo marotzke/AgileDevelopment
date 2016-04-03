@@ -23,8 +23,8 @@ public class NotGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*18, locationY+size*7, locationX+size*20, locationY+size*7);
 		g.drawArc(locationX+size*16, locationY+size*6, size*2, size*2, -20, 360);
 		
-		switch1.setBounds(locationX+size*4,locationY+size*6, switchSize.width, switchSize.height);
-		lampA.setBounds(locationX+size*20,locationY+size*6, switchSize.width, switchSize.height);
+		switch1.setBounds(locationX+size*4,locationY+size*6, switchSizeW, switchSizeH);
+		lampA.setBounds(locationX+size*20,locationY+size*6, switchSizeW, switchSizeH);
 		switch1.setVisible(true);
 		switch2.setVisible(false);
 		switch3.setVisible(false);

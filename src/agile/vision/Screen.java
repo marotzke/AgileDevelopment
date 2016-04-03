@@ -22,15 +22,18 @@ public class Screen extends JPanel{
 	protected int locationY;
 	protected int size;
 	
-	private Switch sa;
-	private Switch sb;
-	private Switch sc;
-	
-	JCheckBox switchA;
+
+    JCheckBox switchA;
     JCheckBox switchB;
     JCheckBox switchC;
     JCheckBox lampA;
     JCheckBox lampB;
+	
+	private Switch sa;
+	private Switch sb;
+	private Switch sc;
+	
+	JFrame frame;
 	
 	private static AndGateDrawer AND;
 	private static OrGateDrawer OR;
@@ -79,7 +82,8 @@ public class Screen extends JPanel{
 	
 	
 	public void setupScreen(Screen screen){
-        JFrame frame = new JFrame("LogicGate Program");
+		
+        frame = new JFrame("LogicGate Program");
         
         switchA = new JCheckBox("A");
         switchB = new JCheckBox("B");
@@ -172,8 +176,6 @@ public class Screen extends JPanel{
 				getGraphics().clearRect(0, 0, frame.getWidth(), frame.getHeight());
 				gate.drawGate(getGraphics());
 				getToolkit().sync();
-				lampA.setSelected(false);
-				lampB.setSelected(false);
 		        }
 		});        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

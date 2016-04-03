@@ -2,8 +2,16 @@ package agile.vision;
 
 import java.awt.Graphics;
 
+import agile.model.XorGate;
+import agile.model.InputPin;
+import agile.model.Source;
+
 public class XorGateDrawer extends GateDrawer{
+	
+	private XorGate xor;
+	
 	public XorGateDrawer(){
+		xor = new XorGate();
 		gateName = "XOR";
 	}
 	public void drawGate(Graphics g) {
@@ -14,5 +22,24 @@ public class XorGateDrawer extends GateDrawer{
 		g.drawArc(locationX+size*6, locationY+size*2, size*3, size*11, -100, 200);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 		
+		switch1.setBounds(locationX+size*4,locationY+size*4, switchSize.width, switchSize.height);
+		switch2.setBounds(locationX+size*4,locationY+size*9, switchSize.width, switchSize.height);
+		lampA.setBounds(locationX+size*20,locationY+size*6, switchSize.width, switchSize.height);
+		switch1.setVisible(true);
+		switch2.setVisible(true);
+		switch3.setVisible(false);
+		lampA.setVisible(true);
+	}
+	
+	@Override
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+		InputPin pinA = xor.getInputPin(0);
+		InputPin pinB = xor.getInputPin(1);
+		
+		pinA.setSource(sa);
+		pinB.setSource(sb);
+		
+		xor.setPin(pinA, pinB);
+		return xor.getOutputValue(0);
 	}
 }

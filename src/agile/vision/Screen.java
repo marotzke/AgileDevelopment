@@ -1,11 +1,11 @@
 package agile.vision;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Graphics;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import agile.model.*;
 import javax.swing.*;
 
 
@@ -17,6 +17,14 @@ public class Screen extends JPanel{
 				
 	private int width;
 	private int height;
+
+	protected int locationX;
+	protected int locationY;
+	protected int size;
+	
+	private Switch sa;
+	private Switch sb;
+	private Switch sc;
 	
 	private static AndGateDrawer AND;
 	private static OrGateDrawer OR;
@@ -33,11 +41,18 @@ public class Screen extends JPanel{
 	/*private String[] logicGateStrings = {"AND","NAND","NEG-AND",
 			"OR","NOR","XOR","XNOR","NEG-OR",
 			"NOT","HALF-ADDER","FULLADDER"};*/
-	static private GateDrawer gate;
+	static protected GateDrawer gate;
 	
 	public Screen(){
+		this.locationX = 0;
+		this.locationY = 100;
+		this.size = 20;
 		this.width  = 500;
 		this.height = 500;
+		
+		sa = new Switch();
+		sb = new Switch();
+		sc = new Switch();
 		
 		setPreferredSize(new Dimension(this.width, this.height));
 		
@@ -60,11 +75,16 @@ public class Screen extends JPanel{
 		getToolkit().sync();
 	}
 	
+	
 	public void setupScreen(Screen screen){
         JFrame frame = new JFrame("LogicGate Program");
         
-        JCheckBox switchA = new JCheckBox();
-        JCheckBox switchB = new JCheckBox();
+        JCheckBox switchA = new JCheckBox("A");
+        JCheckBox switchB = new JCheckBox("B");
+        JCheckBox switchC = new JCheckBox("C");
+        JCheckBox lampA = new JCheckBox("O");
+        JCheckBox lampB = new JCheckBox("Carry");
+        //lampA.setEnabled(false);
         
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
         
@@ -80,40 +100,85 @@ public class Screen extends JPanel{
         logicGates.addItem(HA);
         logicGates.addItem(FA);
         
-        logicGates.setSelectedIndex(0);
-		screen.setLayout(new FlowLayout());
-		screen.add(logicGates);
 		screen.add(switchA);
 		screen.add(switchB);
+		screen.add(switchC);
+		screen.add(lampA);
+		screen.add(lampB);
+		
+        logicGates.setSelectedIndex(0);
+		screen.setLayout(null);
+		screen.add(logicGates);
+		
+
+		Insets insets = screen.getInsets();
+		Dimension pSize = logicGates.getPreferredSize();
+		logicGates.setBounds(350 + insets.left, 5 + insets.top,
+	             pSize.width, pSize.height);
+		//logicGates.setLocation(0, 0);
+		//contentPane2.add(switchA);
+		//contentPane2.add(switchB);
 		
 		switchA.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				boolean a = switchA.isSelected();
 				boolean b = switchB.isSelected();
-				System.out.println(a);
-				System.out.println(b);
+				boolean c = switchC.isSelected();
+				sa.setSignal(a);
+				sb.setSignal(b);
+				sc.setSignal(c);
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
 			}
-			
+		});
+		
+		switchB.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				boolean a = switchA.isSelected();
+				boolean b = switchB.isSelected();
+				boolean c = switchC.isSelected();
+				sa.setSignal(a);
+				sb.setSignal(b);
+				sc.setSignal(c);
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
+			}
+		});
+		
+		switchC.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				boolean a = switchA.isSelected();
+				boolean b = switchB.isSelected();
+				boolean c = switchC.isSelected();
+				sa.setSignal(a);
+				sb.setSignal(b);
+				sc.setSignal(c);
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc));
+			}
 		});
 		
 		logicGates.addActionListener(new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
-				JComboBox<GateDrawer> combo = (JComboBox<GateDrawer>) event.getSource();
-		        gate = (GateDrawer) combo.getSelectedItem();
+				JComboBox<GateDrawer> tmp = (JComboBox<GateDrawer>) event.getSource();
+		        gate = (GateDrawer) tmp.getSelectedItem();
 		        System.out.println(gate);
+		        gate.setSize(size);
+		        gate.setLocationX(locationX);
+		        gate.setLocationY(locationY);
+		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
 				getGraphics().clearRect(0, 0, frame.getWidth(), frame.getHeight());
-		        gate.setSize(10);
-		        gate.setLocationX(5);
-		        gate.setLocationY(5);
-		        gate.drawGate(getGraphics());
-		        getToolkit().sync();
+				gate.drawGate(getGraphics());
+				getToolkit().sync();
 		        }
 		});        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(true);
-        frame.setContentPane(screen);
+        frame.setResizable(false);
+        frame.setContentPane(screen); 
         frame.pack();
         frame.setVisible(true);
         }

@@ -11,6 +11,10 @@ public class Switch implements Source{
 		signal = false;
 	}
 	
+	public void setSignal(boolean signal){
+		this.signal = signal;
+	}
+	
 	@Override
 	public boolean getOutputValue(int index) {
 		return signal;

@@ -2,9 +2,16 @@ package agile.vision;
 
 import java.awt.Graphics;
 
+import agile.model.NegOrGate;
+import agile.model.InputPin;
+import agile.model.Source;
+
 public class NegOrGateDrawer  extends GateDrawer{
 
+	private NegOrGate negor;
+	
 	public NegOrGateDrawer(){
+		negor = new NegOrGate();
 		gateName = "NEG-OR";
 	}
 	public void drawGate(Graphics g) {	
@@ -16,6 +23,26 @@ public class NegOrGateDrawer  extends GateDrawer{
 		g.drawArc(locationX+size*8, locationY+size*4, size*2, size*2, -20, 360);
 		g.drawArc(locationX+size*8, locationY+size*9, size*2, size*2, -20, 360);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
+		
+		switch1.setBounds(locationX+size*4,locationY+size*4, switchSize.width, switchSize.height);
+		switch2.setBounds(locationX+size*4,locationY+size*9, switchSize.width, switchSize.height);
+		lampA.setBounds(locationX+size*20,locationY+size*6, switchSize.width, switchSize.height);
+		switch1.setVisible(true);
+		switch2.setVisible(true);
+		switch3.setVisible(false);
+		lampA.setVisible(true);
+	}
+	
+	@Override
+	public boolean calculateOutputValue(Source sa,Source sb,Source sc){
+		InputPin pinA = negor.getInputPin(0);
+		InputPin pinB = negor.getInputPin(1);
+		
+		pinA.setSource(sa);
+		pinB.setSource(sb);
+		
+		negor.setPin(pinA, pinB);
+		return negor.getOutputValue(0);
 	}
 
 }

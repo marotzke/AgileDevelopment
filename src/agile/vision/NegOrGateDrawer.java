@@ -35,7 +35,11 @@ public class NegOrGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		negor.setPin(pinA, pinB);
-		return negor.getOutputValue(0);
-	}
+		if(index == 0){
+			return negor.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 }

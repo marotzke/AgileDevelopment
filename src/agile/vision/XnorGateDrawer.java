@@ -35,7 +35,11 @@ public class XnorGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		xnor.setPin(pinA, pinB);
-		return xnor.getOutputValue(0);
-	}
+		if(index == 0){
+			return xnor.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 }

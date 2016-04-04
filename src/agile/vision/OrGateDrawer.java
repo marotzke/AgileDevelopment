@@ -33,7 +33,11 @@ public class OrGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		or.setPin(pinA, pinB);
-		return or.getOutputValue(0);
-	}
+		if(index == 0){
+			return or.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 }

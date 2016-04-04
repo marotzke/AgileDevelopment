@@ -35,7 +35,11 @@ public class NegAndGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		negand.setPin(pinA, pinB);
-		return negand.getOutputValue(0);
-	}
+		if(index == 0){
+			return negand.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 }

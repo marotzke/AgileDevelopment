@@ -165,7 +165,7 @@ public class Screen extends JPanel{
 			}
 		});
 		
-		switchC.addActionListener(new ActionListener(){
+		switchC.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				lampA.setEnabled(true);
@@ -197,7 +197,15 @@ public class Screen extends JPanel{
 				g.clearRect(locationX+40, locationY, locationX+size*20, screen.getHeight());
 				gate.drawGate(g);
 				getToolkit().sync();
-		        }
+				
+				//Action Starter
+				lampA.setEnabled(true);
+				lampB.setEnabled(true);
+				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
+				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
+				lampA.setEnabled(false);
+				lampB.setEnabled(false);
+		    }
 		});        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);

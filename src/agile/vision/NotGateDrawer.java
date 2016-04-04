@@ -31,8 +31,12 @@ public class NotGateDrawer extends GateDrawer{
 		InputPin pin = not.getInputPin(0);
 		pin.setSource(sa);
 		not.setPin(pin);
-		return not.getOutputValue(0);
-	}
+		if(index == 0){
+			return not.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 	
 }

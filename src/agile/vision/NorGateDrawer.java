@@ -34,7 +34,11 @@ public class NorGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		nor.setPin(pinA, pinB);
-		return nor.getOutputValue(0);
-	}
+		if(index == 0){
+			return nor.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 
 }

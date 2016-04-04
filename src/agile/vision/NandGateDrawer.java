@@ -34,6 +34,10 @@ public class NandGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		nand.setPin(pinA, pinB);
-		return nand.getOutputValue(0);
-	}
+		if(index == 0){
+			return nand.getOutputValue(0);
+		}
+		else{
+			return false;
+		}	}
 }

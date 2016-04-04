@@ -35,6 +35,11 @@ public class XorGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		xor.setPin(pinA, pinB);
-		return xor.getOutputValue(0);
+		if(index == 0){
+			return xor.getOutputValue(0);
+		}
+		else{
+			return false;
+		}
 	}
 }

@@ -1,6 +1,5 @@
 package agile.vision;
 
-import java.awt.Dimension;
 import java.awt.Graphics;
 
 import javax.swing.JCheckBox;
@@ -54,6 +53,25 @@ public class GateDrawer implements Gate{
 	
 	public void drawGate(Graphics g){
 		
+	}
+	
+	public void drawGround(Graphics g){
+		//c ground
+		g.drawLine(locationX+size*2, locationY+size*14, locationX+size*5, locationY+size*14);		
+		g.drawLine(locationX+size*5, locationY+size*14, locationX+size*5, locationY+size*16);
+		g.drawLine(locationX+size*3, locationY+size*16, locationX+size*7, locationY+size*16);
+		g.drawLine(locationX+size*4, locationY+10+size*16, locationX+size*6, locationY+10+size*16);
+		g.drawLine(locationX+10+size*4, locationY+20+size*16, locationX-10+size*6, locationY+20+size*16);
+		
+	}
+	
+	public void drawGroundCarry(Graphics g){
+		//carry ground
+		g.drawLine(locationX+size*19,locationY+size*10,locationX+size*22,locationY+size*10);
+		g.drawLine(locationX+size*19,locationY+size*10,locationX+size*19,locationY+size*16);
+		g.drawLine(locationX+size*17, locationY+size*16, locationX+size*21, locationY+size*16);
+		g.drawLine(locationX+size*18, locationY+10+size*16, locationX+size*20, locationY+10+size*16);
+		g.drawLine(locationX+10+size*18, locationY+20+size*16, locationX-10+size*20, locationY+20+size*16);
 	}
 	
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){

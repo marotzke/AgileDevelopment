@@ -15,14 +15,17 @@ public class HalfAdderGateDrawer extends GateDrawer{
 	}
 	public void drawGate(Graphics g){
 		
-		g.drawLine(locationX+size*5, locationY+size*5, locationX+size*10, locationY+size*5);
-		g.drawLine(locationX+size*5, locationY+size*10, locationX+size*10, locationY+size*10);
+		g.drawLine(locationX+size*2, locationY+size*5, locationX+size*10, locationY+size*5);
+		g.drawLine(locationX+size*2, locationY+size*10, locationX+size*10, locationY+size*10);
 		g.drawLine(locationX+size*10, locationY+size*3, locationX+size*10, locationY+size*12);
 		g.drawLine(locationX+size*16, locationY+size*3, locationX+size*16, locationY+size*12);
 		g.drawLine(locationX+size*10, locationY+size*3, locationX+size*16, locationY+size*3);
 		g.drawLine(locationX+size*10, locationY+size*12, locationX+size*16, locationY+size*12);
-		g.drawLine(locationX+size*16,locationY+size*5,locationX+size*22,locationY+size*5);
+		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 		g.drawLine(locationX+size*16,locationY+size*10,locationX+size*22,locationY+size*10);
+		g.drawString("Half Adder", locationX+10+size*11, locationY+size*8);
+		
+		this.drawGround(g);
 		
 
 		

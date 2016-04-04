@@ -1,5 +1,6 @@
 package agile.vision;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Insets;
@@ -50,7 +51,7 @@ public class Screen extends JPanel{
 	static protected GateDrawer gate;
 	
 	public Screen(){
-		this.locationX = 0;
+		this.locationX = -30;
 		this.locationY = 100;
 		this.size = 20;
 		this.width  = 500;
@@ -88,7 +89,7 @@ public class Screen extends JPanel{
         switchA = new JCheckBox("A");
         switchB = new JCheckBox("B");
         switchC = new JCheckBox("C");
-        lampA = new JCheckBox("O");
+        lampA = new JCheckBox("Out");
         lampB = new JCheckBox("Carry");
         
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
@@ -105,11 +106,11 @@ public class Screen extends JPanel{
         logicGates.addItem(HA);
         logicGates.addItem(FA);
         
-		switchA.setBounds(locationX,locationY+size*4, 40, 20);
-		switchB.setBounds(locationX,locationY+size*9, 40, 20);
-		switchC.setBounds(locationX,locationY+size*13, 40, 20);
-		lampA.setBounds(locationX+size*22,locationY+size*6, 40, 20);
-		lampB.setBounds(locationX+size*22,locationY+size*9, 70, 20);
+		switchA.setBounds(locationX+30,locationY+size*4, 40, 20);
+		switchB.setBounds(locationX+30,locationY+size*9, 40, 20);
+		switchC.setBounds(locationX+30,locationY+size*13, 40, 20);
+		lampA.setBounds(locationX+size*19,locationY+size*6, 60, 20);
+		lampB.setBounds(locationX+size*19,locationY+size*9, 70, 20);
 		lampA.setEnabled(false);
 		lampB.setEnabled(false);
 		
@@ -123,7 +124,7 @@ public class Screen extends JPanel{
 		screen.setLayout(null);
 		screen.add(logicGates);
 		
-
+		
 		Insets insets = screen.getInsets();
 		Dimension pSize = logicGates.getPreferredSize();
 		logicGates.setBounds(350 + insets.left, 5 + insets.top,
@@ -189,15 +190,7 @@ public class Screen extends JPanel{
 		    	Graphics g = getGraphics();
 				JComboBox<GateDrawer> tmp = (JComboBox<GateDrawer>) event.getSource();
 		        gate = (GateDrawer) tmp.getSelectedItem();
-		        System.out.println(gate);
-		        gate.setSize(size);
-		        gate.setLocationX(locationX);
-		        gate.setLocationY(locationY);
-		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
-				g.clearRect(locationX+40, locationY, locationX+size*20, screen.getHeight());
-				gate.drawGate(g);
-				getToolkit().sync();
-				
+		        
 				//Action Starter
 				lampA.setEnabled(true);
 				lampB.setEnabled(true);
@@ -205,6 +198,15 @@ public class Screen extends JPanel{
 				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
 				lampA.setEnabled(false);
 				lampB.setEnabled(false);
+				
+		        System.out.println(gate);
+		        gate.setSize(size);
+		        gate.setLocationX(locationX);
+		        gate.setLocationY(locationY);
+		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
+				g.clearRect(locationX+70, locationY, locationX+size*20, screen.getHeight());
+				gate.drawGate(g);				
+				getToolkit().sync();
 		    }
 		});        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

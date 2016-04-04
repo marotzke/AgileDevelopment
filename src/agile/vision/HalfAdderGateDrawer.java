@@ -36,7 +36,6 @@ public class HalfAdderGateDrawer extends GateDrawer{
 		
 		this.drawGround(g);
 		
-
 		
 	}
 	
@@ -47,6 +46,15 @@ public class HalfAdderGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		ha.setPin(pinA, pinB);
-		return ha.getOutputValue(index);
+		lampA.setPinLampSource(ha);
+		lampB.setPinLampSource(ha);
+		
+		if (index == 0){
+			return lampA.isOn();
+		} else {
+			return lampB.isOn();
+		}
+		
+		}
+		
 	}
-}

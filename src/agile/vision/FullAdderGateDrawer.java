@@ -49,6 +49,15 @@ public class FullAdderGateDrawer extends GateDrawer{
 		pinC.setSource(sc);
 		
 		fa.setPin(pinA, pinB, pinC);
-		return fa.getOutputValue(index);
+		lampA.setPinLampSource(fa);
+		lampB.setPinLampSource(fa);
+		
+		if (index == 0){
+			
+		return lampA.isOn();
+		
+		} else {
+			return lampB.isOn();
+		}
 	}
 }

@@ -21,7 +21,6 @@ public class OrGateDrawer extends GateDrawer{
 		g.drawArc(locationX+size*7, locationY+size*2, size*3, size*11, -100, 200);
 		g.drawArc(locationX+size*3, locationY+size*2, size*13, size*11, -100, 200);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
-		
 
 	}
 	

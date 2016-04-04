@@ -25,6 +25,7 @@ public class HalfAdderGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*16,locationY+size*10,locationX+size*22,locationY+size*10);
 		
 
+		
 	}
 	
 	@Override

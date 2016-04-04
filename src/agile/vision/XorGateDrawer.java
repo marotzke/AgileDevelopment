@@ -23,7 +23,8 @@ public class XorGateDrawer extends GateDrawer{
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 		
 
-	}
+
+		}
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){

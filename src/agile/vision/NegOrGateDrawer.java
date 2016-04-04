@@ -24,7 +24,6 @@ public class NegOrGateDrawer  extends GateDrawer{
 		g.drawArc(locationX+size*8, locationY+size*9, size*2, size*2, -20, 360);
 		g.drawLine(locationX+size*16,locationY+size*7,locationX+size*22,locationY+size*7);
 
-
 	}
 	
 	@Override

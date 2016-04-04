@@ -110,6 +110,8 @@ public class Screen extends JPanel{
 		switchC.setBounds(locationX,locationY+size*13, 40, 20);
 		lampA.setBounds(locationX+size*22,locationY+size*6, 40, 20);
 		lampB.setBounds(locationX+size*22,locationY+size*9, 70, 20);
+		lampA.setEnabled(false);
+		lampB.setEnabled(false);
 		
 		screen.add(switchA);
 		screen.add(switchB);
@@ -130,6 +132,8 @@ public class Screen extends JPanel{
 		switchA.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				lampA.setEnabled(true);
+				lampB.setEnabled(true);
 				boolean a = switchA.isSelected();
 				boolean b = switchB.isSelected();
 				boolean c = switchC.isSelected();
@@ -138,12 +142,16 @@ public class Screen extends JPanel{
 				sc.setSignal(c);
 				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
 				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
+				lampA.setEnabled(false);
+				lampB.setEnabled(false);
 			}
 		});
 		
 		switchB.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				lampA.setEnabled(true);
+				lampB.setEnabled(true);
 				boolean a = switchA.isSelected();
 				boolean b = switchB.isSelected();
 				boolean c = switchC.isSelected();
@@ -152,12 +160,16 @@ public class Screen extends JPanel{
 				sc.setSignal(c);
 				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
 				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
+				lampA.setEnabled(false);
+				lampB.setEnabled(false);
 			}
 		});
 		
 		switchC.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				lampA.setEnabled(true);
+				lampB.setEnabled(true);
 				boolean a = switchA.isSelected();
 				boolean b = switchB.isSelected();
 				boolean c = switchC.isSelected();
@@ -166,6 +178,8 @@ public class Screen extends JPanel{
 				sc.setSignal(c);
 				lampA.setSelected(gate.calculateOutputValue(sa, sb, sc, 0));
 				lampB.setSelected(gate.calculateOutputValue(sa, sb, sc, 1));
+				lampA.setEnabled(false);
+				lampB.setEnabled(false);
 			}
 		});
 		

@@ -22,7 +22,6 @@ public class NandGateDrawer extends GateDrawer{
 		g.drawArc(locationX+size*16, locationY+size*6, size*2, size*2, -20, 360);
 		g.drawLine(locationX+size*18,locationY+size*7,locationX+size*22,locationY+size*7);
 		
-
 		
 	}
 	

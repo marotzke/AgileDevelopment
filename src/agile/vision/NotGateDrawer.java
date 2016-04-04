@@ -3,6 +3,7 @@ package agile.vision;
 import java.awt.Graphics;
 
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.NotGate;
 import agile.model.Source;
 
@@ -10,11 +11,12 @@ public class NotGateDrawer extends GateDrawer{
 	
 	private NotGate not;
 	private InputPin pin;
+	private Lamp lampA;
 	
 	public NotGateDrawer(){
 		not = new NotGate();
 		gateName = "NOT";
-		
+		lampA = new Lamp(0);
 		pin = not.getInputPin(0);
 	}
 	public void drawGate(Graphics g){
@@ -44,9 +46,9 @@ public class NotGateDrawer extends GateDrawer{
 
 		pin.setSource(sa);
 		not.setPin(pin);
+		lampA.setPinLampSource(not);
 		if(index == 0){
-			return not.getOutputValue(0);
-		}
+			return lampA.isOn();		}
 		else{
 			return false;
 		}	}

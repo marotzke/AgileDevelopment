@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.NegAndGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class NegAndGateDrawer  extends GateDrawer{
@@ -11,11 +12,12 @@ public class NegAndGateDrawer  extends GateDrawer{
 	private NegAndGate negand;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public NegAndGateDrawer(){
 		negand = new NegAndGate();
 		gateName = "NEG-AND";
-		
+		lampA = new Lamp(0);
 		pinA = negand.getInputPin(0);
 		pinB = negand.getInputPin(1);
 	}
@@ -41,8 +43,9 @@ public class NegAndGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		negand.setPin(pinA, pinB);
+		lampA.setPinLampSource(negand);
 		if(index == 0){
-			return negand.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.NandGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class NandGateDrawer extends GateDrawer{
@@ -11,11 +12,12 @@ public class NandGateDrawer extends GateDrawer{
 	private NandGate nand;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public NandGateDrawer(){
 		nand = new NandGate();
 		gateName = "NAND";
-		
+		lampA = new Lamp(0);
 		pinA = nand.getInputPin(0);
 		pinB = nand.getInputPin(1);
 	}
@@ -38,9 +40,10 @@ public class NandGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		nand.setPin(pinA, pinB);
+		lampA.setPinLampSource(nand);
 		if(index == 0){
-			return nand.getOutputValue(0);
-		}
+			return lampA.isOn();
+			}
 		else{
 			return false;
 		}	

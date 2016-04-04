@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.XorGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class XorGateDrawer extends GateDrawer{
@@ -11,10 +12,12 @@ public class XorGateDrawer extends GateDrawer{
 	private XorGate xor;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public XorGateDrawer(){
 		xor = new XorGate();
 		gateName = "XOR";
+		lampA = new Lamp(0);
 		
 		pinA = xor.getInputPin(0);
 		pinB = xor.getInputPin(1);
@@ -41,8 +44,9 @@ public class XorGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		xor.setPin(pinA, pinB);
+		lampA.setPinLampSource(xor);
 		if(index == 0){
-			return xor.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

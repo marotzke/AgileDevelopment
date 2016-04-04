@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.NorGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class NorGateDrawer  extends GateDrawer{
@@ -11,11 +12,12 @@ public class NorGateDrawer  extends GateDrawer{
 	private NorGate nor;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public NorGateDrawer(){
 		nor = new NorGate();
 		gateName = "NOR";
-		
+		lampA = new Lamp(0);
 		pinA = nor.getInputPin(0);
 		pinB = nor.getInputPin(1);
 	}
@@ -38,8 +40,9 @@ public class NorGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		nor.setPin(pinA, pinB);
+		lampA.setPinLampSource(nor);
 		if(index == 0){
-			return nor.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

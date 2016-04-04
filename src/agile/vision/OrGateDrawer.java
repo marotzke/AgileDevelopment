@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.OrGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class OrGateDrawer extends GateDrawer{
@@ -11,11 +12,12 @@ public class OrGateDrawer extends GateDrawer{
 	private OrGate or;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public OrGateDrawer(){
 		or = new OrGate();
 		gateName = "OR";
-		
+		lampA = new Lamp(0);
 		pinA = or.getInputPin(0);
 		pinB = or.getInputPin(1);
 		
@@ -39,8 +41,9 @@ public class OrGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		or.setPin(pinA, pinB);
+		lampA.setPinLampSource(or);
 		if(index == 0){
-			return or.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

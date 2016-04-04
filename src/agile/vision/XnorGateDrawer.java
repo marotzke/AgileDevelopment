@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.XnorGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class XnorGateDrawer extends GateDrawer{
@@ -11,11 +12,12 @@ public class XnorGateDrawer extends GateDrawer{
 	private XnorGate xnor;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public XnorGateDrawer(){
 		xnor = new XnorGate();
 		gateName = "XNOR";
-		
+		lampA = new Lamp(0);
 		pinA = xnor.getInputPin(0);
 		pinB = xnor.getInputPin(1);
 	}
@@ -40,8 +42,9 @@ public class XnorGateDrawer extends GateDrawer{
 		pinB.setSource(sb);
 		
 		xnor.setPin(pinA, pinB);
+		lampA.setPinLampSource(xnor);
 		if(index == 0){
-			return xnor.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

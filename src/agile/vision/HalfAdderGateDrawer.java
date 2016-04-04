@@ -4,17 +4,21 @@ import java.awt.Graphics;
 
 import agile.model.HalfAdderGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class HalfAdderGateDrawer extends GateDrawer{
 	private HalfAdderGate ha;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
+	private Lamp lampB;
 	
 	public HalfAdderGateDrawer(){
 		ha = new HalfAdderGate();
 		gateName = "HALF-ADDER";
-		
+		lampA = new Lamp(0);
+		lampB = new Lamp(1);
 		pinA = ha.getInputPin(0);
 		pinB = ha.getInputPin(1);
 	}

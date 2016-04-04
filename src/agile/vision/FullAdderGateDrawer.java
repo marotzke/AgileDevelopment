@@ -3,6 +3,7 @@ package agile.vision;
 import java.awt.Graphics;
 import agile.model.FullAdderGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class FullAdderGateDrawer extends GateDrawer{
@@ -11,11 +12,14 @@ public class FullAdderGateDrawer extends GateDrawer{
 	private InputPin pinA;
 	private InputPin pinB;
 	private InputPin pinC;
+	private Lamp lampA;
+	private Lamp lampB;
 	
 	public FullAdderGateDrawer(){
 		fa = new FullAdderGate();
 		gateName = "FULL-ADDER";
-		
+		lampA = new Lamp(0);
+		lampB = new Lamp(1);
 		pinA = fa.getInputPin(0);
 		pinB = fa.getInputPin(1);
 		pinC = fa.getInputPin(2);

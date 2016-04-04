@@ -4,6 +4,7 @@ import java.awt.Graphics;
 
 import agile.model.NegOrGate;
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.Source;
 
 public class NegOrGateDrawer  extends GateDrawer{
@@ -11,11 +12,12 @@ public class NegOrGateDrawer  extends GateDrawer{
 	private NegOrGate negor;
 	private InputPin pinA;
 	private InputPin pinB;
+	private Lamp lampA;
 	
 	public NegOrGateDrawer(){
 		negor = new NegOrGate();
 		gateName = "NEG-OR";
-		
+		lampA = new Lamp(0);
 		pinA = negor.getInputPin(0);
 		pinB = negor.getInputPin(1);
 	}
@@ -40,8 +42,9 @@ public class NegOrGateDrawer  extends GateDrawer{
 		pinB.setSource(sb);
 		
 		negor.setPin(pinA, pinB);
+		lampA.setPinLampSource(negor);
 		if(index == 0){
-			return negor.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

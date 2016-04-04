@@ -3,6 +3,7 @@ package agile.vision;
 import java.awt.Graphics;
 
 import agile.model.InputPin;
+import agile.model.Lamp;
 import agile.model.MuxGate;
 import agile.model.Source;
 
@@ -12,11 +13,12 @@ public class MuxGateDrawer extends GateDrawer{
 	private InputPin pinA;
 	private InputPin pinB;
 	private InputPin pinC;
+	private Lamp lampA;
 	
 	public MuxGateDrawer(){
 		mux = new MuxGate();
 		gateName = "MUX";
-		
+		lampA = new Lamp(0);
 		pinA = mux.getInputPin(0);
 		pinB = mux.getInputPin(1);
 		pinC = mux.getInputPin(2);
@@ -45,9 +47,11 @@ public class MuxGateDrawer extends GateDrawer{
 		pinC.setSource(sc);
 		
 		mux.setPin(pinA, pinB, pinC);
+		lampA.setPinLampSource(mux);
+		
 		
 		if(index == 0){
-			return mux.getOutputValue(0);
+			return lampA.isOn();
 		}
 		else{
 			return false;

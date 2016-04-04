@@ -8,10 +8,15 @@ import agile.model.Source;
 
 public class HalfAdderGateDrawer extends GateDrawer{
 	private HalfAdderGate ha;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public HalfAdderGateDrawer(){
 		ha = new HalfAdderGate();
 		gateName = "HALF-ADDER";
+		
+		pinA = ha.getInputPin(0);
+		pinB = ha.getInputPin(1);
 	}
 	public void drawGate(Graphics g){
 		
@@ -33,8 +38,6 @@ public class HalfAdderGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = ha.getInputPin(0);
-		InputPin pinB = ha.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

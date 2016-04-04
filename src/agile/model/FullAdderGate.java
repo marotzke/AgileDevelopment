@@ -5,6 +5,22 @@ public class FullAdderGate extends LogicGate {
 	private InputPin pinA;
 	private InputPin pinB;
 	private InputPin pinC;
+	private HalfAdderGate ha1;
+	private HalfAdderGate ha2;
+	private OrGate or;
+	private InputPin pin1;
+	private InputPin pin2;
+	private InputPin pin3;
+	
+	public FullAdderGate(){
+		ha1 = new HalfAdderGate();
+		ha2 = new HalfAdderGate();
+		or = new OrGate();
+		
+		pin1 = new InputPin(0);
+		pin2 = new InputPin(1);
+		pin3 = new InputPin(1);
+	}
 	
 	public void setPin(InputPin pinA, InputPin pinB, InputPin pinC){
 		this.pinA = pinA;
@@ -13,16 +29,7 @@ public class FullAdderGate extends LogicGate {
 	}
 		
 	public boolean getOutputValue(int index){
-		
-		HalfAdderGate ha1 = new HalfAdderGate();
-		HalfAdderGate ha2 = new HalfAdderGate();
-		OrGate or = new OrGate();
-		
 		ha1.setPin(pinA,pinB);
-		
-		InputPin pin1 = new InputPin(0);
-		InputPin pin2 = new InputPin(1);
-		InputPin pin3 = new InputPin(1);
 		
 		pin1.setSource(ha1);
 		pin2.setSource(ha1);

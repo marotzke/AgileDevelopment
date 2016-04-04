@@ -4,6 +4,13 @@ public class HalfAdderGate extends LogicGate{
 	
 	private InputPin pinA;
 	private InputPin pinB;
+	private AndGate and;
+	private XorGate xor;
+	
+	public HalfAdderGate(){
+		and = new AndGate();
+		xor = new XorGate();
+	}
 	
 	public void setPin(InputPin pinA, InputPin pinB){
 		this.pinA = pinA;
@@ -11,9 +18,6 @@ public class HalfAdderGate extends LogicGate{
 	}
 	
 	public boolean getOutputValue(int index){
-		
-		AndGate and = new AndGate();
-		XorGate xor = new XorGate();
 		
 		and.setPin(pinA, pinB);
 		xor.setPin(pinA,pinB);

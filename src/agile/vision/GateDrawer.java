@@ -8,7 +8,7 @@ import agile.model.Source;
 
 public class GateDrawer implements Gate{
 	
-	protected String gateName;
+	protected String gateName = "Select a Gate";
 		
 	protected int switchSizeH;
 	protected int switchSizeW;
@@ -52,7 +52,7 @@ public class GateDrawer implements Gate{
 	}
 	
 	public void drawGate(Graphics g){
-		
+		g.drawString("Select a Gate to Start", locationX+size*8, locationY+size*5);
 	}
 	
 	public void drawGround(Graphics g){

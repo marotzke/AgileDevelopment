@@ -3,6 +3,14 @@ package agile.model;
 public class NandGate extends LogicGate{
 	private InputPin pinA;
 	private InputPin pinB;
+	private AndGate and;
+	private NotGate not;
+	
+	public NandGate(){
+		and = new AndGate();
+		not = new NotGate();
+		
+	}
 	
 	
 	public void setPin(InputPin pinA, InputPin pinB){
@@ -11,9 +19,6 @@ public class NandGate extends LogicGate{
 	}
 	
 	public boolean getOutputValue(int index){
-		AndGate and = new AndGate();
-		NotGate not = new NotGate();
-		
 		and.setPin(pinA, pinB);
 
 		InputPin pin = new InputPin(0);

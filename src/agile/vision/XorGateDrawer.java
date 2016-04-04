@@ -9,10 +9,15 @@ import agile.model.Source;
 public class XorGateDrawer extends GateDrawer{
 	
 	private XorGate xor;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public XorGateDrawer(){
 		xor = new XorGate();
 		gateName = "XOR";
+		
+		pinA = xor.getInputPin(0);
+		pinB = xor.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {
 			g.drawLine(locationX+size*2, locationY+size*5, locationX+size*10, locationY+size*5);
@@ -31,8 +36,6 @@ public class XorGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = xor.getInputPin(0);
-		InputPin pinB = xor.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

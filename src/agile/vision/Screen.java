@@ -1,6 +1,5 @@
 package agile.vision;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Insets;
@@ -24,17 +23,17 @@ public class Screen extends JPanel{
 	protected int size;
 	
 
-    JCheckBox switchA;
-    JCheckBox switchB;
-    JCheckBox switchC;
-    JCheckBox lampA;
-    JCheckBox lampB;
+    private JCheckBox switchA;
+    private JCheckBox switchB;
+    private JCheckBox switchC;
+    private JCheckBox lampA;
+    private JCheckBox lampB;
 	
 	private Switch sa;
 	private Switch sb;
 	private Switch sc;
 	
-	JFrame frame;
+	private JFrame frame;
 	
 	private static AndGateDrawer AND;
 	private static OrGateDrawer OR;
@@ -47,6 +46,8 @@ public class Screen extends JPanel{
 	private static NegOrGateDrawer NEGOR;
 	private static NorGateDrawer NOR;
 	private static NandGateDrawer NAND;
+	private static MuxGateDrawer MUX;
+	private static GateDrawer select;
 
 	static protected GateDrawer gate;
 	
@@ -74,6 +75,8 @@ public class Screen extends JPanel{
 		NEGOR = new NegOrGateDrawer();
 		HA = new HalfAdderGateDrawer();
 		FA = new FullAdderGateDrawer();
+		MUX = new MuxGateDrawer();
+		select = new GateDrawer();
 		
 	}
 	
@@ -94,6 +97,7 @@ public class Screen extends JPanel{
         
         JComboBox<GateDrawer> logicGates = new JComboBox<GateDrawer>();
         
+        logicGates.addItem(select);
         logicGates.addItem(NOT);
         logicGates.addItem(AND);
         logicGates.addItem(NAND);
@@ -105,6 +109,7 @@ public class Screen extends JPanel{
         logicGates.addItem(NEGOR);
         logicGates.addItem(HA);
         logicGates.addItem(FA);
+        logicGates.addItem(MUX);
         
 		switchA.setBounds(locationX+30,locationY+size*4, 40, 20);
 		switchB.setBounds(locationX+30,locationY+size*9, 40, 20);
@@ -127,8 +132,7 @@ public class Screen extends JPanel{
 		
 		Insets insets = screen.getInsets();
 		Dimension pSize = logicGates.getPreferredSize();
-		logicGates.setBounds(350 + insets.left, 5 + insets.top,
-	             pSize.width, pSize.height);
+		logicGates.setBounds(350 + insets.left, 5 + insets.top, pSize.width, pSize.height);
 
 		switchA.addActionListener(new ActionListener(){
 			@Override

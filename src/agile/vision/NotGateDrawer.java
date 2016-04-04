@@ -9,10 +9,13 @@ import agile.model.Source;
 public class NotGateDrawer extends GateDrawer{
 	
 	private NotGate not;
+	private InputPin pin;
 	
 	public NotGateDrawer(){
 		not = new NotGate();
 		gateName = "NOT";
+		
+		pin = not.getInputPin(0);
 	}
 	public void drawGate(Graphics g){
 
@@ -38,7 +41,7 @@ public class NotGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pin = not.getInputPin(0);
+
 		pin.setSource(sa);
 		not.setPin(pin);
 		if(index == 0){

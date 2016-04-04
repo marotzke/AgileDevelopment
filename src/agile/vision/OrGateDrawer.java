@@ -9,10 +9,16 @@ import agile.model.Source;
 public class OrGateDrawer extends GateDrawer{
 	
 	private OrGate or;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public OrGateDrawer(){
 		or = new OrGate();
 		gateName = "OR";
+		
+		pinA = or.getInputPin(0);
+		pinB = or.getInputPin(1);
+		
 	}
 	public void drawGate(Graphics g){	
 		
@@ -28,9 +34,7 @@ public class OrGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = or.getInputPin(0);
-		InputPin pinB = or.getInputPin(1);
-		
+
 		pinA.setSource(sa);
 		pinB.setSource(sb);
 		

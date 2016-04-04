@@ -9,10 +9,15 @@ import agile.model.Source;
 public class NegOrGateDrawer  extends GateDrawer{
 
 	private NegOrGate negor;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public NegOrGateDrawer(){
 		negor = new NegOrGate();
 		gateName = "NEG-OR";
+		
+		pinA = negor.getInputPin(0);
+		pinB = negor.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {	
 		
@@ -30,8 +35,6 @@ public class NegOrGateDrawer  extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc,int index){
-		InputPin pinA = negor.getInputPin(0);
-		InputPin pinB = negor.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

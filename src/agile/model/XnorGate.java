@@ -4,6 +4,17 @@ public class XnorGate extends LogicGate {
 	
 	private InputPin pinA;
 	private InputPin pinB;
+	private XorGate xor;
+	private NotGate not;
+	private InputPin pin;
+	
+	public XnorGate(){
+		
+		xor = new XorGate();
+		not = new NotGate();
+		
+		pin = new InputPin(0);
+	}
 	
 	public void setPin(InputPin pinA, InputPin pinB){
 		this.pinA = pinA;
@@ -12,12 +23,7 @@ public class XnorGate extends LogicGate {
 	
 	public boolean getOutputValue(int index){
 		
-		XorGate xor = new XorGate();
-		NotGate not = new NotGate();
-		
 		xor.setPin(pinA, pinB);
-		
-		InputPin pin = new InputPin(0);
 		
 		pin.setSource(xor);
 		

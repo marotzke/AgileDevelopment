@@ -9,10 +9,15 @@ import agile.model.Source;
 public class XnorGateDrawer extends GateDrawer{
 
 	private XnorGate xnor;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public XnorGateDrawer(){
 		xnor = new XnorGate();
 		gateName = "XNOR";
+		
+		pinA = xnor.getInputPin(0);
+		pinB = xnor.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {
 		g.drawLine(locationX+size*2, locationY+size*5, locationX+size*10, locationY+size*5);
@@ -30,8 +35,6 @@ public class XnorGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = xnor.getInputPin(0);
-		InputPin pinB = xnor.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

@@ -9,10 +9,15 @@ import agile.model.Source;
 public class NandGateDrawer extends GateDrawer{
 	
 	private NandGate nand;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public NandGateDrawer(){
 		nand = new NandGate();
 		gateName = "NAND";
+		
+		pinA = nand.getInputPin(0);
+		pinB = nand.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {
 		g.drawLine(locationX+size*2, locationY+size*5, locationX+size*10, locationY+size*5);
@@ -28,9 +33,7 @@ public class NandGateDrawer extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = nand.getInputPin(0);
-		InputPin pinB = nand.getInputPin(1);
-		
+
 		pinA.setSource(sa);
 		pinB.setSource(sb);
 		
@@ -40,5 +43,6 @@ public class NandGateDrawer extends GateDrawer{
 		}
 		else{
 			return false;
-		}	}
+		}	
+	}
 }

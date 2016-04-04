@@ -9,10 +9,15 @@ import agile.model.Source;
 public class NegAndGateDrawer  extends GateDrawer{
 
 	private NegAndGate negand;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public NegAndGateDrawer(){
 		negand = new NegAndGate();
 		gateName = "NEG-AND";
+		
+		pinA = negand.getInputPin(0);
+		pinB = negand.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {
 		g.drawLine(locationX+size*2, locationY+size*5, locationX+size*8, locationY+size*5);
@@ -31,8 +36,6 @@ public class NegAndGateDrawer  extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = negand.getInputPin(0);
-		InputPin pinB = negand.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

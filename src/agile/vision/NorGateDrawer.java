@@ -9,10 +9,15 @@ import agile.model.Source;
 public class NorGateDrawer  extends GateDrawer{
 
 	private NorGate nor;
+	private InputPin pinA;
+	private InputPin pinB;
 	
 	public NorGateDrawer(){
 		nor = new NorGate();
 		gateName = "NOR";
+		
+		pinA = nor.getInputPin(0);
+		pinB = nor.getInputPin(1);
 	}
 	public void drawGate(Graphics g) {
 		
@@ -28,8 +33,6 @@ public class NorGateDrawer  extends GateDrawer{
 	
 	@Override
 	public boolean calculateOutputValue(Source sa,Source sb,Source sc, int index){
-		InputPin pinA = nor.getInputPin(0);
-		InputPin pinB = nor.getInputPin(1);
 		
 		pinA.setSource(sa);
 		pinB.setSource(sb);

@@ -208,7 +208,7 @@ public class Screen extends JPanel{
 		        gate.setLocationX(locationX);
 		        gate.setLocationY(locationY);
 		        gate.setSwitches(switchA, switchB, switchC, lampA, lampB);
-				g.clearRect(locationX+70, locationY, locationX+size*20, screen.getHeight());
+				g.clearRect(locationX+70, locationY, locationX+size*20, frame.getHeight());
 				gate.drawGate(g);				
 				getToolkit().sync();
 		    }
